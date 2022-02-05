@@ -1,6 +1,6 @@
 ## Overview
 
-マークダウン記法を使った CMS
+GitHub とマークダウン記法を使った CMS
 
 
 ## How to run
