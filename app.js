@@ -12,7 +12,7 @@ var dbtype = 'DBTYPE' in process.env ? process.env.DBTYPE : ( settings.dbtype ? 
 //var database_url = 'DATABASE_URL' in process.env ? process.env.DATABASE_URL : settings.database_url; 
 if( dbtype ){
   var db = require( './api/db_' + dbtype );
-  app.use( '/api/db', db );
+  app.use( '/_api/db', db );
 }
 
 var redisClient = require( './api/db_redis' );
@@ -40,6 +40,54 @@ if( redisClient ){
 }
 app.use( session( sess ) );
 
+//. #3
+app.get( '/_api/files', async function( req, res ){
+  res.contentType( 'application/json; charset=utf-8' );
+
+  try{
+    var folder = req.query.folder;
+    if( folder ){
+      if( !folder.startsWith( '/' ) ){
+        folder = '/' + folder;
+      }
+      if( !folder.endsWith( '/' ) ){
+        folder = folder + '/';
+      }
+      var dirname = __dirname + '/md' + folder;
+      fs.readdir( dirname, function( err, filenames ){
+        if( err ){
+          res.status( 400 );
+          res.write( JSON.stringify( { status: false, error: err }, null, 2 ) );
+          res.end();
+        }else{
+          var files = [];
+          var directories = [];
+          filenames.forEach( function( filename ){
+            var stats = fs.statSync( dirname + filename );
+            if( stats.isDirectory() ){
+              directories.push( filename );
+            }else{
+              files.push( filename );
+            }
+          });
+
+          res.write( JSON.stringify( { status: true, folder: folder, directories: directories, files: files }, null, 2 ) );
+          res.end();
+        }
+      });
+    }else{
+      res.status( 400 );
+      res.write( JSON.stringify( { status: false, error: 'parameter "folder" need to be specified.' }, null, 2 ) );
+      res.end();
+    }
+  }catch( e ){
+    res.status( 400 );
+    res.write( JSON.stringify( { status: false, error: e }, null, 2 ) );
+    res.end();
+  }
+});
+
+//. 全てのパスに対応可能
 app.get( '/*', async function( req, res ){
   try{
     var path = req.originalUrl;
