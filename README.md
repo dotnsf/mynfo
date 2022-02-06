@@ -1,16 +1,12 @@
 # Mynfo
 
 
-## Overview
+## Mynfo Overview
 
 マークダウン記法を使った CMS
 
 
-## Online Service
-
-
-
-## How to run
+## How to run on localhost
 
 - `$ git clone https://github.com/dotnsf/mynfo.git`
 
@@ -25,21 +21,6 @@
 - `$ node app`
 
 - `http://localhost:8080/`
-
-
-## Environment Values
-
-- `DBTYPE`
-
-  - `couchdb`, `postgres`, or ``(nothing)
-
-- `DATABASE_URL`
-
-  - DB URL string of `couchdb` or `postgres`, if needed.
-
-- `REDIS_URL`
-
-  - URL string of `redis`, if needed.
 
 
 ## Licensing

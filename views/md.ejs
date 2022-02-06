@@ -4,8 +4,24 @@
 
 <%- include('./navi', { subtitle: path.substr( 1, path.length - 4 ) }) %>
 
+<%
+var tmp = path.split( '/' );
+tmp.splice( tmp.length - 1, 1 );
+var folder = ( tmp.length == 1 ? '/' : tmp.join( '/' ) );
+if( !path.endsWith( '/' ) && !folder.endsWith( '/' ) ){
+  folder += '/';
+}
+%>
+
 <div class="container" id="main_div" style="position: relative; top: 20px;">
-  <%- html %>
+  <div class="row">
+    <div class="col-3">
+      <%- include('./files', { folder: folder } ) %>
+    </div>
+    <div class="col-9">
+      <%- html %>
+    </div>
+  </div>
 </div>
 
 <%- include('./footer', {}) %>

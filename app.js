@@ -67,7 +67,9 @@ app.get( '/_api/files', async function( req, res ){
             if( stats.isDirectory() ){
               directories.push( filename );
             }else{
-              files.push( filename );
+              if( filename != '.gitkeep' ){
+                files.push( filename );
+              }
             }
           });
 
