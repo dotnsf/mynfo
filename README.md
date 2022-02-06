@@ -3,7 +3,7 @@
 
 ## Mynfo Overview
 
-マークダウン記法を使った CMS
+Simple CMS(Contents Management System) which use **MarkDown** notation and **GitHub**.
 
 
 ## How to run on localhost
@@ -33,47 +33,47 @@
 
 - Select `New` - `Create new app` on upper-right.
 
-![image01](/img/system01.png)
+![image01](//mynfo.herokuapp.com/img/system01.png)
 
 - Input available `App name`(**myinfo** in this case), and choose `region`(**United States** in this case). Then you can click `add to pipeline...` button.
 
-![image02](/img/system02.png)
+![image02](//mynfo.herokuapp.com/img/system02.png)
 
 - At `Choose a pipeline` section, select `+ Create new pipeline`.
 
-![image03](/img/system03.png)
+![image03](//mynfo.herokuapp.com/img/system03.png)
 
 - You can input `Name the pipeline`(**mynfo-pipeline** in this case), and choose a `stage`(**production** in this case). Then you can click `Create app` button.
 
-![image04](/img/system04.png)
+![image04](//mynfo.herokuapp.com/img/system04.png)
 
 - Pipeline is created, and connected to your application. Now you can select `Deployment method`. In this case, let's assume we want to deploy application whenever github repository would be updated. So you should select `GitHub` icon.
 
-![image05](/img/system05.png)
+![image05](//mynfo.herokuapp.com/img/system05.png)
 
 - You need to specify GitHub repository to connect. So let's input repository name, **mynfo**, and click `Search` button.
 
-![image06](/img/system06.png)
+![image06](//mynfo.herokuapp.com/img/system06.png)
 
 - You will see your respository as `(yourname)/myinfo`. Let's choose this one, and click `Connect` button.
 
-![image07](/img/system07.png)
+![image07](//mynfo.herokuapp.com/img/system07.png)
 
 - Now you can see this pipeline has been connected to your github repository.
 
-![image08](/img/system08.png)
+![image08](//mynfo.herokuapp.com/img/system08.png)
 
 - As a final step of preparation, you need to specify `automatic deploy` configuration. In this case, we would choose **main** branch as a target, and click `Enable Automatic Deploys` button.
 
-![image09](/img/system09.png)
+![image09](//mynfo.herokuapp.com/img/system09.png)
 
 - Now you can confirm that your pipeline is connected to your main branch of GitHub repository.
 
-![image10](/img/system10.png)
+![image10](//mynfo.herokuapp.com/img/system10.png)
 
 - At this moment, you can see your pipeline(**mynfo-pipeline**) is connected to your main branch of GitHub repository in your pipeline setting too.
 
-![image11](/img/system11.png)
+![image11](//mynfo.herokuapp.com/img/system11.png)
 
 
 ## How to update your contents(sample)
@@ -96,19 +96,19 @@ As a sample, you would add one new `test.md` file, and push it to main branch:
 
 - Then you can see your pipeline would be run automatically:
 
-![image12](/img/system12.png)
+![image12](//mynfo.herokuapp.com/img/system12.png)
 
 - After deployment process, you will see that new application would be deployed. You can open new application from `Open app` button:
 
-![image13](/img/system13.png)
+![image13](//mynfo.herokuapp.com/img/system13.png)
 
 - You will see current(new) application. You can see `test.md`, which has been just added, in menu.
 
-![image14](/img/system14.png)
+![image14](//mynfo.herokuapp.com/img/system14.png)
 
 - If you click `test.md`, you will see and confirm contents of `test.md` file.
 
-![image15](/img/system15.png)
+![image15](//mynfo.herokuapp.com/img/system15.png)
 
 
 
@@ -136,11 +136,11 @@ As a sample, you would add one new `test.md` file, and push it to main branch:
 
     - Click `Add file` button, and choose `Create new file` or `Upload files`.
 
-![image16](/img/system16.png)
+![image16](//mynfo.herokuapp.com/img/system16.png)
 
     - Edit new file, or upload new file. And click `Commit changes` button to commit to `main` branch.
 
-![image17](/img/system17.png)
+![image17](//mynfo.herokuapp.com/img/system17.png)
 
 
 ## Licensing
