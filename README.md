@@ -80,7 +80,7 @@ Simple CMS(Contents Management System) which use **MarkDown** notation and **Git
 
 As a sample, you would add one new `test.md` file, and push it to main branch:
 
-- In CLI,
+- (1-1) In CLI,
 
   - `$ cd mynfo`
 
@@ -92,55 +92,43 @@ As a sample, you would add one new `test.md` file, and push it to main branch:
 
   - `$ git push -u origin main`
 
-  - (You can do this from GitHub web console too.)
+  - (You can do this from GitHub web console without `git` CLI too. See (1-2). )
 
-- Then you can see your pipeline would be run automatically:
+- (1-2) In Web console GUI,
 
-![image12](//mynfo.herokuapp.com/img/system12.png)
+  - Visit `https://github.com/yourname/mynfo` with Web Browser,
 
-- After deployment process, you will see that new application would be deployed. You can open new application from `Open app` button:
-
-![image13](//mynfo.herokuapp.com/img/system13.png)
-
-- You will see current(new) application. You can see `test.md`, which has been just added, in menu.
-
-![image14](//mynfo.herokuapp.com/img/system14.png)
-
-- If you click `test.md`, you will see and confirm contents of `test.md` file.
-
-![image15](//mynfo.herokuapp.com/img/system15.png)
-
-
-
-## How to update your contents
-
-- (Edit your contents under `md/` folder from CLI or Web console.)
-
-- (Add/Edit contents under `public/` folder, if needed.)
-
-- Git commit and push your change:
-
-  - In CLI,
-
-    - `$ cd mynfo`
-
-    - `$ git add .`
-
-    - `$ git commit -m '(commit comment)'`
-
-    - `$ git push -u origin main`
-
-  - In Web console,
-
-    - Navigate to folder( `md/` for new contents, or `public/` for new resource).
-
-    - Click `Add file` button, and choose `Create new file` or `Upload files`.
+  - Click `md/` folder,
 
 ![image16](//mynfo.herokuapp.com/img/system16.png)
 
-    - Edit new file, or upload new file. And click `Commit changes` button to commit to `main` branch.
+  - Click `Add file` - `Create new file`,
 
 ![image17](//mynfo.herokuapp.com/img/system17.png)
+
+  - Name `test.md`, and input contents as `# テスト`,
+
+![image18](//mynfo.herokuapp.com/img/system18.png)
+
+  - Input commit comment as `md/test.md added.`, and Click `commit new file` in bottom.
+
+![image19](//mynfo.herokuapp.com/img/system19.png)
+
+- (2) Then you can see your pipeline would be run automatically:
+
+![image12](//mynfo.herokuapp.com/img/system12.png)
+
+- (3) After deployment process, you will see that new application would be deployed. You can open new application from `Open app` button:
+
+![image13](//mynfo.herokuapp.com/img/system13.png)
+
+- (4) You will see current(new) application. You can see `test.md`, which has been just added, in menu.
+
+![image14](//mynfo.herokuapp.com/img/system14.png)
+
+- (5) If you click `test.md`, you will see and confirm contents of `test.md` file.
+
+![image15](//mynfo.herokuapp.com/img/system15.png)
 
 
 ## Licensing
