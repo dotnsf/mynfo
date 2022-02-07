@@ -1,5 +1,6 @@
 //. app.js
 var express = require( 'express' ),
+    basicAuth = require( 'basic-auth-connect' ),
     ejs = require( 'ejs' ),
     fs = require( 'fs' ),
     marked = require( 'marked' ),
@@ -39,6 +40,16 @@ if( redisClient ){
   sess.store = new RedisStore( { client: redisClient } );
 }
 app.use( session( sess ) );
+
+//. Env values
+var settings_basic_username = 'BASIC_USERNAME' in process.env ? process.env.BASIC_USERNAME : ( settings.basic_username ? settings.basic_username : "" ); 
+var settings_basic_password = 'BASIC_PASSWORD' in process.env ? process.env.BASIC_PASSWORD : ( settings.basic_password ? settings.basic_password : "" ); 
+
+if( settings_basic_username && settings_basic_password ){
+  app.all( '/*', basicAuth( function( user, pass ){
+    return( user === settings.basic_username && pass === settings.basic_password );
+  }));
+}
 
 //. #3
 app.get( '/_api/files', async function( req, res ){

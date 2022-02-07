@@ -6,6 +6,19 @@
 Simple CMS(Contents Management System) which use **MarkDown** notation and **GitHub**.
 
 
+## Environment values
+
+- Set following two values to enable basic authentication:
+
+  - `BASIC_USERNAME`
+
+    - Username of basic authentication
+
+  - `BASIC_PASSWORD`
+
+    - Password of basic authentication
+
+
 ## How to run on localhost
 
 - Fork `https://github.com/dotnsf/mynfo.git` to your Github repository.

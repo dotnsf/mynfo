@@ -5,7 +5,7 @@
         "start": "node app.js"
     },
     "dependencies": {
-        "@ibm-cloud/cloudant": "0.0.24",
+        "basic-auth-connect": "^1.0.0",
         "connect-redis": "^6.0.0",
         "ejs": "^3.1.6",
         "express": "^4.17.2",
