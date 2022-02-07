@@ -4,20 +4,3 @@ html, body {
   padding: 0px;
   margin: 0px;
 }
-
-#display_div{
-  color: #080;
-  font-size: 50px;
-  font-weight: bold;
-  text-align: center;
-}
-
-#input_div{
-  text-align: center;
-}
-
-#message_div{
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-}
