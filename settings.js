@@ -1,2 +1,2 @@
-exports.basic_username = '';
-exports.basic_password = '';
+exports.basic_username = 'username';
+exports.basic_password = 'password';
