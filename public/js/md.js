@@ -19,7 +19,7 @@ async function mynfoFiles( folder ){
   });
 }
 
-function mynfoFileList( folder ){
+function mynfoFileList( folder, path ){
   $('#files_dir').html( '' );
   $('#target_folder').html( '<img src="/img/icon_folder.png" width="30"/> <b>' + folder + '</b>' );
   $.ajax({
@@ -33,18 +33,21 @@ function mynfoFileList( folder ){
           var parent_folder = tmp.join( '/' );
           if( parent_folder == '' ){ parent_folder = '/'; }
 
-          var li = '<li><a href="#" onClick="mynfoFileList(\'' + parent_folder + '\');"><img src="/img/icon_folder.png" width="30"/> <b>..</b></a></li>';
+          var li = '<li><a href="#" onClick="mynfoFileList(\'' + parent_folder + '\',\'' + path + '\');"><img src="/img/icon_folder.png" width="30"/> <b>..</b></a></li>';
           $('#files_dir').append( li );
         }
         result.directories.forEach( function( directory ){
           if( !directory.endsWith( '/' ) ){
             directory += '/';
           }
-          var li = '<li><a href="#" onClick="mynfoFileList(\'' + folder + directory + '\');"><img src="/img/icon_folder.png" width="30"/> ' + directory + '</a></li>';
+          var li = '<li><a href="#" onClick="mynfoFileList(\'' + folder + directory + '\',\'' + path + '\');"><img src="/img/icon_folder.png" width="30"/> ' + directory + '</a></li>';
           $('#files_dir').append( li );
         });
         result.files.forEach( function( file ){
           var li = '<li><a href="#" onClick="mynfoFileLoad(\'' + folder + file + '\');"><img src="/img/icon_file.png" width="30"/> ' + file + '</a></li>';
+          if( path.endsWith( file ) ){
+            li = '<li><a href="#" class="selectedfile" onClick="mynfoFileLoad(\'' + folder + file + '\');"><img src="/img/icon_file.png" width="30"/> ' + file + '</a></li>';
+          }
           $('#files_dir').append( li );
         });
       }

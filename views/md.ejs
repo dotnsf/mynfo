@@ -16,7 +16,7 @@ if( !path.endsWith( '/' ) && !folder.endsWith( '/' ) ){
 <div class="container" id="main_div" style="position: relative; top: 20px;">
   <div class="row">
     <div class="col-3">
-      <%- include('./files', { folder: folder } ) %>
+      <%- include('./files', { folder: folder, path: path } ) %>
     </div>
     <div class="col-9">
       <%- html %>
