@@ -47,7 +47,7 @@ var settings_basic_password = 'BASIC_PASSWORD' in process.env ? process.env.BASI
 
 if( settings_basic_username && settings_basic_password ){
   app.all( '/*', basicAuth( function( user, pass ){
-    return( user === settings.basic_username && pass === settings.basic_password );
+    return( user === settings_basic_username && pass === settings_basic_password );
   }));
 }
 
