@@ -40,7 +40,7 @@ function mynfoFileList( folder, path ){
           if( !directory.endsWith( '/' ) ){
             directory += '/';
           }
-          var li = '<li><a href="#" onClick="mynfoFileList(\'' + folder + directory + '\',\'' + path + '\');"><img src="/img/icon_folder.png" width="30"/> ' + directory + '</a></li>';
+          var li = '<li><a href="#" onClick="mynfoFileList(\'' + folder + directory + '\',\'' + path + '\');"><img class="icon" src="/img/icon_folder.png" width="30"/> ' + directory + '</a></li>';
           $('#files_dir').append( li );
         });
         result.files.forEach( function( file ){

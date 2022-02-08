@@ -1,6 +1,6 @@
 <%- include('./header', { subtitle: path.substr( 1, path.length - 4 ) }) %>
 
-<body>
+<body style="margin-top: 80px;">
 
 <%- include('./navi', { subtitle: path.substr( 1, path.length - 4 ) }) %>
 
@@ -13,12 +13,12 @@ if( !path.endsWith( '/' ) && !folder.endsWith( '/' ) ){
 }
 %>
 
-<div class="container" id="main_div" style="position: relative; top: 20px;">
+<div class="container" id="main_div" style="padding-bottom: 80px; position: relative; top: 20px;">
   <div class="row">
-    <div class="col-3">
+    <div class="col-12 col-lg-3">
       <%- include('./files', { folder: folder, path: path } ) %>
     </div>
-    <div class="col-9">
+    <div class="col-12 col-lg-9">
       <%- html %>
     </div>
   </div>

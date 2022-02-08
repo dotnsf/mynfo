@@ -6,6 +6,10 @@ html, body {
   margin: 0px;
 }
 
+.img90{
+  width: 90%;
+}
+
 .selectedfile{
   font-weight: bold;
 }
