@@ -18,6 +18,16 @@ Simple CMS(Contents Management System) which use **MarkDown** notation and **Git
 
     - Password of basic authentication
 
+- Set following two values to link to contents page in GitHub:
+
+  - `GITHUB_REPO_URL`
+
+    - URL of your GitHub contents
+
+  - `GITHUB_BRANCH`
+
+    - Branch name of your GitHub contents
+
 
 ## How to run on localhost
 
