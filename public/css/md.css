@@ -6,6 +6,10 @@ html, body {
   margin: 0px;
 }
 
+dir.files{
+  list-style: none;
+}
+
 .img90{
   width: 90%;
 }
