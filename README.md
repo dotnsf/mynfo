@@ -31,7 +31,7 @@ Simple CMS(Contents Management System) which use **MarkDown** notation and **Git
 
 ## How to run on localhost
 
-- Fork `https://github.com/dotnsf/mynfo.git` to your Github repository.
+- Fork `https://github.com/juge-me/mynfo.git` to your Github repository.
 
 - `$ git clone https://github.com/yourname/mynfo.git`
 
