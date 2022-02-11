@@ -56,7 +56,7 @@ Simple CMS(Contents Management System) which use **MarkDown** notation and **Git
 
 - Select `New` - `Create new app` on upper-right.
 
-<img class="img90" src="//mynfo.herokuapp.com/img/system01.png"/>
+<img class="img90" src="https://mynfo.herokuapp.com/img/system01.png"/>
 
 - Input available `App name`(**myinfo** in this case), and choose `region`(**United States** in this case). Then you can click `add to pipeline...` button.
 
