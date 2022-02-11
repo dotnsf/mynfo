@@ -19,9 +19,27 @@ async function mynfoFiles( folder ){
   });
 }
 
-function mynfoFileList( folder, path ){
+function mynfoFileList( folder, path, github_file_url ){
   $('#files_dir').html( '' );
-  $('#target_folder').html( '<img src="/img/icon_folder.png" width="30"/> <b>' + folder + '</b>' );
+  var img = '<img src="/img/icon_folder.png" width="30"/> <b>' + folder + '</b>';
+  if( github_file_url ){
+    var tmp = github_file_url.split( '/' );
+    if( tmp.length > 1 ){
+      tmp.splice( tmp.length - 1, 1 );
+      var github_folder_url = tmp.join( '/' );
+      var dropdown = '<div class="dropdown">'
+          + '<a href="#" class="btn btn-xs btn-secondary btn-xs dropdown-toggle" data-toggle="dropdown" id="dropdownFolderLink" aria-haspopup="true" aria-expandable="false">'
+          + '<i class="fab fa-github"></i>'
+          + '</a>'
+          + '<div class="dropdown-menu" aria-labelledby="dropdownFolderLink">'
+          + '<a class="dropdown-item" id="dropdown-githubfolderview" target="_blank" href="' + github_folder_url.split( 'blob' ).join( 'tree' ) + folder + '">GitHub フォルダ参照</a>'
+          + '<a class="dropdown-item" id="dropdown-githubfolderedit" target="_blank" href="' + github_folder_url.split( 'blob' ).join( 'new' ) + folder + '">GitHub 新規ファイル追加</a>'
+          + '</div>'
+          + '</div>';
+      img = dropdown + img;
+    }
+  }
+  $('#target_folder').html( img );
   $.ajax({
     type: 'GET',
     url: '/_api/files?folder=' + folder,
@@ -33,14 +51,14 @@ function mynfoFileList( folder, path ){
           var parent_folder = tmp.join( '/' );
           if( parent_folder == '' ){ parent_folder = '/'; }
 
-          var li = '<li><a href="#" onClick="mynfoFileList(\'' + parent_folder + '\',\'' + path + '\');"><img src="/img/icon_folder.png" width="30"/> <b>..</b></a></li>';
+          var li = '<li><a href="#" onClick="mynfoFileList(\'' + parent_folder + '\',\'' + path + '\',\'' + github_file_url + '\');"><img src="/img/icon_folder.png" width="30"/> <b>..</b></a></li>';
           $('#files_dir').append( li );
         }
         result.directories.forEach( function( directory ){
           if( !directory.endsWith( '/' ) ){
             directory += '/';
           }
-          var li = '<li><a href="#" onClick="mynfoFileList(\'' + folder + directory + '\',\'' + path + '\');"><img class="icon" src="/img/icon_folder.png" width="30"/> ' + directory + '</a></li>';
+          var li = '<li><a href="#" onClick="mynfoFileList(\'' + folder + directory + '\',\'' + path + '\',\'' + github_file_url + '\');"><img class="icon" src="/img/icon_folder.png" width="30"/> ' + directory + '</a></li>';
           $('#files_dir').append( li );
         });
         result.files.forEach( function( file ){

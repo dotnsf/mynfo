@@ -16,12 +16,20 @@ if( !path.endsWith( '/' ) && !folder.endsWith( '/' ) ){
 <div class="container" id="main_div" style="padding-bottom: 80px; position: relative; top: 20px;">
   <div class="row">
     <div class="col-12 col-lg-3">
-      <%- include('./files', { folder: folder, path: path } ) %>
+      <%- include('./files', { folder: folder, path: path, github_file_url: github_file_url } ) %>
     </div>
     <div class="col-12 col-lg-9">
 <% if( github_file_url ){ %>
       <div style="text-align: right;">
-        <a target="_blank" class="btn btn-xs btn-secondary" href="<%= github_file_url %>"><i class="fab fa-github"></i></a>
+        <div class="dropdown">
+          <a href="#" class="btn btn-xs btn-secondary btn-xs dropdown-toggle" data-toggle="dropdown" id="dropdownFileLink" aria-haspopup="true" aria-expandable="false">
+            <i class="fab fa-github"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownFileLink">
+            <a class="dropdown-item" id="dropdown-githubfileview" target="_blank" href="<%= github_file_url %>">GitHub ファイル参照</a>
+            <a class="dropdown-item" id="dropdown-githubfileedit" target="_blank" href="<%= github_file_url.split( 'blob' ).join( 'edit' ) %>">GitHub ファイル編集</a>
+          </div>
+        </div>
       </div>
 <% } %>
       <%- html %>
