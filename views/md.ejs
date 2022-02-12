@@ -2,7 +2,7 @@
 
 <body style="margin-top: 80px;">
 
-<%- include('./navi', { title: title, subtitle: path.substr( 1, path.length - 4 ) }) %>
+<%- include('./navi', { title: title, subtitle: path.substr( 1, path.length - 4 ), bootstrap_theme: bootstrap_theme }) %>
 
 <%
 var tmp = path.split( '/' );
@@ -37,4 +37,4 @@ if( !path.endsWith( '/' ) && !folder.endsWith( '/' ) ){
   </div>
 </div>
 
-<%- include('./footer', {}) %>
+<%- include('./footer', { bootstrap_theme: bootstrap_theme }) %>

@@ -32,11 +32,19 @@ Simple CMS(Contents Management System) which use **MarkDown** notation and **Git
 
   - `CONTENTS_TITLE`
 
-    - Title of your site(default "Mynfo")
+    - Title of your site(default: "Mynfo")
 
   - `CONTENTS_IMAGE_URL`
 
-    - Image URL of your application icon(default "/img/icon.png")
+    - Image URL of your application icon(default: "/img/icon.png")
+
+  - `REVERSE_FILES`
+
+    - Reverse files/folders order(default: "", set "1" to enable.)
+
+  - `BOOTSTRAP_THEME`
+
+    - Bootstrap color theme(default: "warning")
 
 
 ## How to run on localhost

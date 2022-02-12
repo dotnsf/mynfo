@@ -62,6 +62,10 @@ while( settings_github_repo_url.endsWith( '/' ) ){
 var settings_contents_title = 'CONTENTS_TITLE' in process.env ? process.env.CONTENTS_TITLE : ( settings.contents_title ? settings.contents_title : "Mynfo" ); 
 var settings_contents_image_url = 'CONTENTS_IMAGE_URL' in process.env ? process.env.CONTENTS_IMAGE_URL : ( settings.contents_image_url ? settings.contents_image_url : "/img/icon.png" ); 
 
+//. #23, #24
+var settings_reverse_files = 'REVERSE_FILES' in process.env ? process.env.REVERSE_FILES : ( settings.reverse_files ? settings.reverse_files : "" ); 
+var settings_bootstrap_theme = 'BOOTSTRAP_THEME' in process.env ? process.env.BOOTSTRAP_THEME : ( settings.bootstrap_theme ? settings.bootstrap_theme : "warning" ); 
+
 //. #3
 app.get( '/_api/files', async function( req, res ){
   res.contentType( 'application/json; charset=utf-8' );
@@ -94,6 +98,12 @@ app.get( '/_api/files', async function( req, res ){
               }
             }
           });
+          
+          //. #23
+          if( settings_reverse_files ){
+            directories.reverse();
+            files.reverse();
+          }
 
           res.write( JSON.stringify( { status: true, folder: folder, directories: directories, files: files }, null, 2 ) );
           res.end();
@@ -144,7 +154,7 @@ app.get( '/*', async function( req, res ){
           //. https://github.com/dotnsf/mynfo/blob/dotnsf-mynfo/md/w3/cisco_anyconnect.md
           github_file_url = settings_github_repo_url + '/blob/' + settings_github_branch + '/md' + path;
         }
-        res.render( 'md', { path: path, html: html, github_file_url: github_file_url, title: settings_contents_title, image_url: settings_contents_image_url } );
+        res.render( 'md', { path: path, html: html, github_file_url: github_file_url, title: settings_contents_title, image_url: settings_contents_image_url, bootstrap_theme: settings_bootstrap_theme } );
       }
     });
   }catch( e ){
