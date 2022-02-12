@@ -28,6 +28,16 @@ Simple CMS(Contents Management System) which use **MarkDown** notation and **Git
 
     - Branch name of your GitHub contents
 
+- Set following values if needed:
+
+  - `CONTENTS_TITLE`
+
+    - Title of your site(default "Mynfo")
+
+  - `CONTENTS_IMAGE_URL`
+
+    - Image URL of your application icon(default "/img/icon.png")
+
 
 ## How to run on localhost
 

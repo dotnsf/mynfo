@@ -1,8 +1,8 @@
-<%- include('./header', { subtitle: path.substr( 1, path.length - 4 ) }) %>
+<%- include('./header', { title: title, subtitle: path.substr( 1, path.length - 4 ), image_url: image_url }) %>
 
 <body style="margin-top: 80px;">
 
-<%- include('./navi', { subtitle: path.substr( 1, path.length - 4 ) }) %>
+<%- include('./navi', { title: title, subtitle: path.substr( 1, path.length - 4 ) }) %>
 
 <%
 var tmp = path.split( '/' );

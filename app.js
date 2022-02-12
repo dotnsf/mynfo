@@ -58,6 +58,10 @@ while( settings_github_repo_url.endsWith( '/' ) ){
   settings_github_repo_url = settings_github_repo_url.substr( 0, settings_github_repo_url.length - 1 );
 }
 
+//. #20
+var settings_contents_title = 'CONTENTS_TITLE' in process.env ? process.env.CONTENTS_TITLE : ( settings.contents_title ? settings.contents_title : "Mynfo" ); 
+var settings_contents_image_url = 'CONTENTS_IMAGE_URL' in process.env ? process.env.CONTENTS_IMAGE_URL : ( settings.contents_image_url ? settings.contents_image_url : "/img/icon.png" ); 
+
 //. #3
 app.get( '/_api/files', async function( req, res ){
   res.contentType( 'application/json; charset=utf-8' );
@@ -140,7 +144,7 @@ app.get( '/*', async function( req, res ){
           //. https://github.com/dotnsf/mynfo/blob/dotnsf-mynfo/md/w3/cisco_anyconnect.md
           github_file_url = settings_github_repo_url + '/blob/' + settings_github_branch + '/md' + path;
         }
-        res.render( 'md', { path: path, html: html, github_file_url: github_file_url } );
+        res.render( 'md', { path: path, html: html, github_file_url: github_file_url, title: settings_contents_title, image_url: settings_contents_image_url } );
       }
     });
   }catch( e ){
