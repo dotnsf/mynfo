@@ -6,3 +6,4 @@ exports.contents_title = '';
 exports.contents_image_url = '';
 exports.reverse_files = '';
 exports.bootstrap_theme = '';
+exports.custom_logo_image_url = '';
