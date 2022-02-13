@@ -21,7 +21,7 @@ async function mynfoFiles( folder ){
 
 function mynfoFileList( folder, path, github_file_url ){
   $('#files_dir').html( '' );
-  var img = '<img src="/img/icon_folder.png" width="30"/> <b>' + folder + '</b>';
+  var img = '<img src="/img/icon_folder.png" width="20"/> <b>' + folder + '</b>';
   if( github_file_url ){
     var tmp = github_file_url.split( '/' );
     if( tmp.length > 1 ){
@@ -51,20 +51,20 @@ function mynfoFileList( folder, path, github_file_url ){
           var parent_folder = tmp.join( '/' );
           if( parent_folder == '' ){ parent_folder = '/'; }
 
-          var li = '<li><a href="#" onClick="mynfoFileList(\'' + parent_folder + '\',\'' + path + '\',\'' + github_file_url + '\');"><img src="/img/icon_folder.png" width="30"/> <b>..</b></a></li>';
+          var li = '<li><a href="#" onClick="mynfoFileList(\'' + parent_folder + '\',\'' + path + '\',\'' + github_file_url + '\');"><img src="/img/icon_folder.png" width="20"/> <b>..</b></a></li>';
           $('#files_dir').append( li );
         }
         result.directories.forEach( function( directory ){
           if( !directory.endsWith( '/' ) ){
             directory += '/';
           }
-          var li = '<li><a href="#" onClick="mynfoFileList(\'' + folder + directory + '\',\'' + path + '\',\'' + github_file_url + '\');"><img class="icon" src="/img/icon_folder.png" width="30"/> ' + directory + '</a></li>';
+          var li = '<li><a href="#" onClick="mynfoFileList(\'' + folder + directory + '\',\'' + path + '\',\'' + github_file_url + '\');"><img class="icon" src="/img/icon_folder.png" width="20"/> ' + directory + '</a></li>';
           $('#files_dir').append( li );
         });
         result.files.forEach( function( file ){
-          var li = '<li><a href="#" onClick="mynfoFileLoad(\'' + folder + file + '\');"><img src="/img/icon_file.png" width="30"/> ' + file + '</a></li>';
+          var li = '<li><a href="#" onClick="mynfoFileLoad(\'' + folder + file + '\');"><img src="/img/icon_file.png" width="20"/> ' + removeLastMd( file ) + '</a></li>';
           if( path.endsWith( file ) ){
-            li = '<li><a href="#" class="selectedfile" onClick="mynfoFileLoad(\'' + folder + file + '\');"><img src="/img/icon_file.png" width="30"/> ' + file + '</a></li>';
+            li = '<li><a href="#" class="selectedfile" onClick="mynfoFileLoad(\'' + folder + file + '\');"><img src="/img/icon_file.png" width="20"/> ' + removeLastMd( file ) + '</a></li>';
           }
           $('#files_dir').append( li );
         });
@@ -78,4 +78,12 @@ function mynfoFileList( folder, path, github_file_url ){
 
 function mynfoFileLoad( file ){
   window.location.href = file;
+}
+
+function removeLastMd( path ){
+  if( path.toLowerCase().endsWith( '.md' ) ){
+    path = path.substring( 0, path.length - 3 );
+  }
+
+  return path;
 }

@@ -46,8 +46,10 @@ Simple CMS(Contents Management System) which use **MarkDown** notation and **Git
 
     - Bootstrap color theme(default: "warning")
 
+- You can edit `settings.js` instead of setting environment values.
 
-## How to run on localhost
+
+## How to run and test (on localhost)
 
 - Fork `https://github.com/dotnsf/mynfo.git` to your Github repository.
 
@@ -63,7 +65,7 @@ Simple CMS(Contents Management System) which use **MarkDown** notation and **Git
 
 - `$ node app`
 
-- `http://localhost:8080/`
+- Access to `http://localhost:8080/`
 
 
 ## How to create application and CICD pipeline in heroku
