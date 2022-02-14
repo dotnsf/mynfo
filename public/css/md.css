@@ -44,7 +44,7 @@ dir.files{
   position: fixed;
   z-index: 999;
   width: 100%;
-  /*height: 100vh;*/
+  height: 120vh;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
