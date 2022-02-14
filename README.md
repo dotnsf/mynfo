@@ -165,13 +165,17 @@ As a sample, you would add one new `test.md` file, and push it to main branch:
 
 <img class="img90" src="https://raw.githubusercontent.com/dotnsf/mynfo/main/public/img/system13.png"/>
 
-- (4) You will see current(new) application. You can see `test.md`, which has been just added, in menu.
+- (4) You will see current(new) application. 
 
 <img class="img90" src="https://raw.githubusercontent.com/dotnsf/mynfo/main/public/img/system14.png"/>
 
-- (5) If you click `test.md`, you will see and confirm contents of `test.md` file.
+- (5) You can see `test.md` in hamberger-menu on top-right, which has been just added, in menu.
 
 <img class="img90" src="https://raw.githubusercontent.com/dotnsf/mynfo/main/public/img/system15.png"/>
+
+- (6) If you click `test.md`, you will see and confirm contents of newly added `test.md` file.
+
+<img class="img90" src="https://raw.githubusercontent.com/dotnsf/mynfo/main/public/img/system20.png"/>
 
 
 ## Licensing
