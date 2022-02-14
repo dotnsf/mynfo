@@ -26,6 +26,7 @@ dir.files{
 /* #29 */
 #g-nav{
   position: fixed;
+  padding: 40px;
   z-index: 999;
   top: 0;
   right: -120%;
