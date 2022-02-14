@@ -27,16 +27,16 @@ function mynfoFileList( folder, path, github_file_url ){
     if( tmp.length > 1 ){
       tmp.splice( tmp.length - 1, 1 );
       var github_folder_url = tmp.join( '/' );
-      var dropdown = '<div class="dropdown">'
+      img = '<div class="dropdown" id="files_dropdown">'
           + '<a href="#" class="btn btn-xs btn-secondary btn-xs dropdown-toggle" data-toggle="dropdown" id="dropdownFolderLink" aria-haspopup="true" aria-expandable="false">'
           + '<i class="fab fa-github"></i>'
           + '</a>'
+          + img
           + '<div class="dropdown-menu" aria-labelledby="dropdownFolderLink">'
           + '<a class="dropdown-item" id="dropdown-githubfolderview" target="_blank" href="' + github_folder_url.split( 'blob' ).join( 'tree' ) + folder + '">GitHub フォルダ参照</a>'
           + '<a class="dropdown-item" id="dropdown-githubfolderedit" target="_blank" href="' + github_folder_url.split( 'blob' ).join( 'new' ) + folder + '">GitHub 新規ファイル追加</a>'
           + '</div>'
           + '</div>';
-      img = dropdown + img;
     }
   }
   $.ajax({

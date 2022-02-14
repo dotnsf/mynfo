@@ -19,6 +19,10 @@ dir.files{
   font-weight: bold;
 }
 
+#files_dropdown{
+  padding-bottom: 30px;
+}
+
 /* #29 */
 #g-nav{
   position: fixed;
@@ -54,7 +58,7 @@ dir.files{
 
 #g-nav li{
   list-style: none;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 #g-nav li a{
@@ -62,7 +66,7 @@ dir.files{
   text-decoration: none;
   padding: 10px;
   display: block;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   letter-spacing: 0.1em;
   font-weight: bold;
 }
