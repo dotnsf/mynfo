@@ -2,8 +2,6 @@
 
 <body style="margin-top: 80px;">
 
-<%- include('./navi', { title: title, subtitle: path.substr( 1, path.length - 4 ), bootstrap_theme: bootstrap_theme, custom_logo_image_url: custom_logo_image_url }) %>
-
 <%
 var tmp = path.split( '/' );
 tmp.splice( tmp.length - 1, 1 );
@@ -13,12 +11,11 @@ if( !path.endsWith( '/' ) && !folder.endsWith( '/' ) ){
 }
 %>
 
+<%- include('./navi', { folder: folder, path: path, github_file_url: github_file_url, title: title, subtitle: path.substr( 1, path.length - 4 ), bootstrap_theme: bootstrap_theme, custom_logo_image_url: custom_logo_image_url }) %>
+
 <div class="container" id="main_div" style="padding-bottom: 80px; position: relative; top: 20px;">
   <div class="row">
-    <div class="col-12 col-lg-3">
-      <%- include('./files', { folder: folder, path: path, github_file_url: github_file_url } ) %>
-    </div>
-    <div class="col-12 col-lg-9">
+    <div class="col-12">
 <% if( github_file_url ){ %>
       <div style="text-align: right;">
         <div class="dropdown">

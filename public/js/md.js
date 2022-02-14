@@ -39,12 +39,12 @@ function mynfoFileList( folder, path, github_file_url ){
       img = dropdown + img;
     }
   }
-  $('#target_folder').html( img );
   $.ajax({
     type: 'GET',
     url: '/_api/files?folder=' + folder,
     success: function( result ){
       if( result && result.status ){
+        $('#files_dir').append( img );
         if( folder != '/' ){
           var tmp = folder.split( '/' );
           tmp.splice( tmp.length - 2, 2 );
@@ -87,3 +87,16 @@ function removeLastMd( path ){
 
   return path;
 }
+
+//. #29
+$(function(){
+  $('.openbtn').click( function(){
+    $(this).toggleClass( 'active' );
+    $('#g-nav').toggleClass( 'panelactive' );
+  });
+
+  $('#g-nav a').click( function(){
+    $('.openbtn').removeClass( 'active' );
+    $('#g-nav').removeClass( 'panelactive' );
+  })
+});
