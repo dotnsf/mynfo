@@ -9,6 +9,8 @@ html, body {
 dir.files{
   list-style: none;
   padding-left: 5px;
+  margin-top: 200px;
+  margin-bottom: 200px;
 }
 
 .img90{
@@ -52,7 +54,7 @@ dir.files{
 #g-nav dir{
   position: absolute;
   z-index: 999;
-  top: 50%;
+  /*top: 50%;*/
   left: 50%;
   transform: translate( -50%, -50% );
 }
