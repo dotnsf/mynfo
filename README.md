@@ -178,6 +178,15 @@ As a sample, you would add one new `test.md` file, and push it to main branch:
 <img class="img90" src="https://raw.githubusercontent.com/dotnsf/mynfo/main/public/img/system20.png"/>
 
 
+## How to run without heroku
+
+- We believe **heroku might be one of the easiest platform** to deploy Mynfo, especially when to create automatic deploy pipeline. But you don't have to deploy to heroku.
+
+- Use [GitHub Actions](https://github.co.jp/features/actions) to create CICD pipeline to deploy your application to your favorite server. You can use other CICD pipeline services with your GitHub or GitLab, .. also.
+
+- If you don't want use Git like services, actually you don't have to. You can just download source code, and run it on your Node.js runtime. In this case, you can edit md/\*.md file in your server directory, but you can't control file versions with Git. No backups in Git also.
+
+
 ## Licensing
 
 This code is licensed under MIT.
