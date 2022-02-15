@@ -1,13 +1,22 @@
-<%- include('./header', { subtitle: 'Error' }) %>
+<%- include('./header', { title: title, subtitle: 'Error', image_url: image_url }) %>
 
-<body>
+<body style="margin-top: 80px;">
 
-<%- include('./navi', { subtitle: 'Error' }) %>
+<%
+var tmp = path.split( '/' );
+tmp.splice( tmp.length - 1, 1 );
+var folder = ( tmp.length == 1 ? '/' : tmp.join( '/' ) );
+if( !path.endsWith( '/' ) && !folder.endsWith( '/' ) ){
+  folder += '/';
+}
+%>
 
-<div class="container" id="main_div" style="position: relative; top: 20px;">
+<%- include('./navi', { folder: folder, path: path, github_file_url: github_file_url, title: title, subtitle: 'Error', bootstrap_theme: bootstrap_theme, custom_logo_image_url: custom_logo_image_url }) %>
+
+<div class="container" id="main_div" style="padding-bottom: 80px; position: relative; top: 20px;">
   <pre>
   <%- error %>
   </pre>
 </div>
 
-<%- include('./footer', {}) %>
+<%- include('./footer', { bootstrap_theme: bootstrap_theme }) %>

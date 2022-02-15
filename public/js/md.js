@@ -71,6 +71,7 @@ function mynfoFileList( folder, path, github_file_url ){
       }
     },
     error: function( e0, e1, e2 ){
+      //. 存在しないフォルダが指定された場合
       console.log( e0, e1, e2 );
     }
   });
