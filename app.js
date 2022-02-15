@@ -156,20 +156,24 @@ app.get( '/*', async function( req, res ){
           res.render( 'error', { path: path, error: JSON.stringify( err, null, 2 ), github_file_url: '', title: settings_contents_title, image_url: settings_contents_image_url, bootstrap_theme: settings_bootstrap_theme, custom_logo_image_url: settings_custom_logo_image_url } );
         }
       }else{
-        fs.readFile( filepath, { encoding: 'utf8' }, function( err, file ){
-          if( err ){
-            //console.log( err );
-            res.render( 'error', { path: path, error: JSON.stringify( err, null, 2 ), github_file_url: '', title: settings_contents_title, image_url: settings_contents_image_url, bootstrap_theme: settings_bootstrap_theme, custom_logo_image_url: settings_custom_logo_image_url } );
-          }else{
-            var html = marked.parse( file );
-            var github_file_url = '';
-            if( settings_github_repo_url && settings_github_branch ){
-              //. https://github.com/dotnsf/mynfo/blob/dotnsf-mynfo/md/w3/cisco_anyconnect.md
-              github_file_url = settings_github_repo_url + '/blob/' + settings_github_branch + '/md' + path;
+        if( stat.isFile() ){
+          fs.readFile( filepath, { encoding: 'utf8' }, function( err, file ){
+            if( err ){
+              //console.log( err );
+              res.render( 'error', { path: path, error: JSON.stringify( err, null, 2 ), github_file_url: '', title: settings_contents_title, image_url: settings_contents_image_url, bootstrap_theme: settings_bootstrap_theme, custom_logo_image_url: settings_custom_logo_image_url } );
+            }else{
+              var html = marked.parse( file );
+              var github_file_url = '';
+              if( settings_github_repo_url && settings_github_branch ){
+                //. https://github.com/dotnsf/mynfo/blob/dotnsf-mynfo/md/w3/cisco_anyconnect.md
+                github_file_url = settings_github_repo_url + '/blob/' + settings_github_branch + '/md' + path;
+              }
+              res.render( 'md', { path: path, html: html, github_file_url: github_file_url, title: settings_contents_title, image_url: settings_contents_image_url, bootstrap_theme: settings_bootstrap_theme, custom_logo_image_url: settings_custom_logo_image_url } );
             }
-            res.render( 'md', { path: path, html: html, github_file_url: github_file_url, title: settings_contents_title, image_url: settings_contents_image_url, bootstrap_theme: settings_bootstrap_theme, custom_logo_image_url: settings_custom_logo_image_url } );
-          }
-        });
+          });
+        }else{
+          res.render( 'error', { path: path, error: 'directory found: ' + path, github_file_url: '', title: settings_contents_title, image_url: settings_contents_image_url, bootstrap_theme: settings_bootstrap_theme, custom_logo_image_url: settings_custom_logo_image_url } );
+        }
       }
     });
   }catch( e ){
