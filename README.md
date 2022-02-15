@@ -6,6 +6,8 @@
 Simple CMS(Contents Management System) which use **MarkDown** notation and **GitHub**.
 
 
+---
+
 ## Environment values
 
 - Set following two values to enable basic authentication:
@@ -49,6 +51,8 @@ Simple CMS(Contents Management System) which use **MarkDown** notation and **Git
 - You can edit `settings.js` instead of setting environment values.
 
 
+---
+
 ## How to run and test (on localhost)
 
 - Fork `https://github.com/dotnsf/mynfo.git` to your Github repository.
@@ -67,6 +71,8 @@ Simple CMS(Contents Management System) which use **MarkDown** notation and **Git
 
 - Access to `http://localhost:8080/`
 
+
+---
 
 ## How to create application and CICD pipeline in heroku
 
@@ -118,6 +124,8 @@ Simple CMS(Contents Management System) which use **MarkDown** notation and **Git
 
 <img class="img90" src="https://raw.githubusercontent.com/dotnsf/mynfo/main/public/img/system11.png"/>
 
+
+---
 
 ## How to update your contents(sample)
 
@@ -178,6 +186,8 @@ As a sample, you would add one new `test.md` file, and push it to main branch:
 <img class="img90" src="https://raw.githubusercontent.com/dotnsf/mynfo/main/public/img/system20.png"/>
 
 
+---
+
 ## How to run without heroku
 
 - We believe **heroku might be one of the easiest platform** to deploy Mynfo, especially when to create automatic deploy pipeline. But you don't have to deploy to heroku.
@@ -187,10 +197,14 @@ As a sample, you would add one new `test.md` file, and push it to main branch:
 - If you don't want use Git like services, actually you don't have to. You can just download source code, and run it on your Node.js runtime. In this case, you can edit md/\*.md file in your server directory, but you can't control file versions with Git. No backups in Git also.
 
 
+---
+
 ## Licensing
 
 This code is licensed under MIT.
 
+
+---
 
 ## Copyright
 
