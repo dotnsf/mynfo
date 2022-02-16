@@ -137,6 +137,8 @@ As a sample, you would add one new `test.md` file, and push it to main branch:
 
   - `$ echo "# テスト" > md/test.md`
 
+    - Create, Update, or Delete some .md files.
+
   - `$ git add md/test.md`
 
   - `$ git commit -m 'md/test.md added.'`
@@ -144,6 +146,9 @@ As a sample, you would add one new `test.md` file, and push it to main branch:
   - `$ git push -u origin main`
 
   - (You can do this from GitHub web console without `git` CLI too. See (1-2). )
+
+  - Be sure that files in **remote** Git repository would be updated. Especially when you use automatic deploy pipeline, your application would use file directory in remote Git repository.
+
 
 - (1-2) In Web console GUI,
 
@@ -156,6 +161,8 @@ As a sample, you would add one new `test.md` file, and push it to main branch:
   - Click `Add file` - `Create new file`,
 
 <img class="img90" src="https://raw.githubusercontent.com/dotnsf/mynfo/main/public/img/system17.png"/>
+
+    - Create, Update, or Delete some .md files.
 
   - Name `test.md`, and input contents as `# テスト`,
 
@@ -194,7 +201,7 @@ As a sample, you would add one new `test.md` file, and push it to main branch:
 
 - Use [GitHub Actions](https://github.co.jp/features/actions) to create CICD pipeline to deploy your application to your favorite server. You can use other CICD pipeline services with your GitHub or GitLab, .. also.
 
-- If you don't want use Git like services, actually you don't have to. You can just download source code, and run it on your Node.js runtime. In this case, you can edit md/\*.md file in your server directory, but you can't control file versions with Git. No backups in Git also.
+- If you don't want use Git like services, actually you don't have to. You can just download source code, and run it on your Node.js runtime. In this case, you can edit md/\*.md file in your server directory, but you can't control file versions with Git. No backups in Git too.
 
 
 ---
