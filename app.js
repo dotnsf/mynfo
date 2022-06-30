@@ -162,6 +162,10 @@ app.get( '/*', async function( req, res ){
               //console.log( err );
               res.render( 'error', { path: path, error: JSON.stringify( err, null, 2 ), github_file_url: '', title: settings_contents_title, image_url: settings_contents_image_url, bootstrap_theme: settings_bootstrap_theme, custom_logo_image_url: settings_custom_logo_image_url } );
             }else{
+              //. #32
+              file = file.split( '```mermaid' ).join( '<div class="mermaid">' );
+              file = file.split( '```' ).join( '</div>' );
+
               var html = marked.parse( file );
               var github_file_url = '';
               if( settings_github_repo_url && settings_github_branch ){

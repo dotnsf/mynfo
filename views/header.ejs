@@ -10,6 +10,11 @@
 <link href="//use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet"/>
 <link href="/css/md.css" rel="stylesheet"/>
 <script src="/js/md.js"></script>
+
+<!-- #32 -->
+<script src="//unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<link href="//unpkg.com/mermaid/dist/mermaid.min.css"/>
+
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
@@ -39,4 +44,13 @@
 <!-- Twitter Card // -->
 
 <title><%= title %> - <%= subtitle %></title>
+
+<!-- #32 -->
+<script>
+$(function(){
+  mermaid.initialize({
+    startOnLoad: true
+  });
+});
+</script>
 </head>
