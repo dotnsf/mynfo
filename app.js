@@ -172,7 +172,12 @@ app.get( '/*', async function( req, res ){
                 //. https://github.com/dotnsf/mynfo/blob/dotnsf-mynfo/md/w3/cisco_anyconnect.md
                 github_file_url = settings_github_repo_url + '/blob/' + settings_github_branch + '/md' + path;
               }
-              res.render( 'md', { path: path, html: html, github_file_url: github_file_url, title: settings_contents_title, image_url: settings_contents_image_url, bootstrap_theme: settings_bootstrap_theme, custom_logo_image_url: settings_custom_logo_image_url } );
+
+              var mtime = stat.mtime.getTime();
+              var dt = new Date();
+              dt.setTime( mtime );
+
+              res.render( 'md', { path: path, html: html, github_file_url: github_file_url, title: settings_contents_title, image_url: settings_contents_image_url, bootstrap_theme: settings_bootstrap_theme, custom_logo_image_url: settings_custom_logo_image_url, mtime: dt.toISOString() } );
             }
           });
         }else{

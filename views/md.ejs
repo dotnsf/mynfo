@@ -29,6 +29,11 @@ if( !path.endsWith( '/' ) && !folder.endsWith( '/' ) ){
         </div>
       </div>
 <% } %>
+<% if( mtime ){ %>
+      <div style="text-align: right;">
+        (<%= mtime %>)
+      </div>
+<% } %>
       <%- html %>
     </div>
   </div>
